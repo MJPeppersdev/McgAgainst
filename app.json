@@ -1,0 +1,41 @@
+{
+    "name": "Mcg Against",
+    "description": "A party game where you play white cards to try and produce the most amusing outcome when combined with the given black card.",
+    "keywrods": [
+      "game",
+      "party",
+      "comedy"
+    ],
+    "repository": "https://github.com/McGdevfunk824/mcgagainst",
+    "env": {
+      "MGA_HOST": {
+        "description": "The hostname McG Against will be accessible at.",
+        "value": "mcgagainst.herokuapp.com"
+      },
+      "MGA_PATH": {
+        "description": "The path McG Against will be accessible at.",
+        "value": "/"
+      },
+      "MGA_PROTOCOL": {
+        "description": "The protocol McG Against will be accessible on.",
+        "value": "https"
+      },
+      "APPLICATION_SECRET": {
+        "description": "A random secret for security confirmation in the application.",
+        "generator": "secret"
+      },
+      "ELM_VERSION": "0.18",
+      "ELM_COMPILE": "elm make client/src/McgAgainst.elm --output public/javascripts/McgAgainst.js"
+    },
+    "buildpacks": [
+        {
+          "url": "https://github.com/ianpurvis/heroku-buildpack-version"
+        },
+      {
+        "url": "https://github.com/srid/heroku-buildpack-elm"
+      },
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-scala"
+      }
+    ]
+  }
